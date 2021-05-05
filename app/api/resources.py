@@ -54,7 +54,7 @@ api.add_resource(power_time_series,'/api/power-timeseries/'
                  endpoint='power-series')
 api.add_resource(daily_power,'/api/daily-power/<init_date>/<final_date>',
                  endpoint='daily-power')
-api.add_resource(month_energy, '/api/actual-power-month',
+api.add_resource(month_energy, '/api/actual-energy-month',
                  endpoint='power-month')
 api.add_resource(month_reactive, '/api/actual-reactive-month',
                  endpoint='power-reactive-month')

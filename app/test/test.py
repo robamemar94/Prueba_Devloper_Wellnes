@@ -27,7 +27,7 @@ class TestFlaskAPI(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
 
     def test_power_month(self):
-        res = self.client().get('api/actual-power-month')
+        res = self.client().get('api/actual-energy-month')
         self.assertEqual(res.status_code, 200)
 
     def test_reactive_month(self):
@@ -45,7 +45,8 @@ class TestFlaskAPI(unittest.TestCase):
         self.assertEqual(response.status_code,200)
 
     def test_actual_status(self):
-        """ Testea vista protegida """
+        """ Testea la vista protegida mediante la autentificación del
+        usuario """
 
         body={"username":"user1",
                 "password":"abcxyz"}
