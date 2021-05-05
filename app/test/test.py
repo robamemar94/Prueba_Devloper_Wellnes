@@ -1,4 +1,3 @@
-
 import unittest
 import os
 import json
@@ -37,33 +36,13 @@ class TestFlaskAPI(unittest.TestCase):
 
     def test_get_token(self):
         "Test get token"
-        body={"username":"user1",
-                "password":"abcxyz"}
+
         headers = {'content-type': 'application/json'}
-        response = requests.post('http://127.0.0.1:5000/auth', headers=headers,
-                            data=json.dumps(body))
-        self.assertEqual(response.status_code,200)
+        response = self.client().post('http://127.0.0.1:5000/auth', json={
+            'username': 'user1', 'password': 'abcxyz'
+        })
+        self.assertEqual(response.status_code, 200)
 
-    def test_actual_status(self):
-        """ Testea la vista protegida mediante la autentificación del
-        usuario """
-
-        body={"username":"user1",
-                "password":"abcxyz"}
-        headers = {'content-type': 'application/json'}
-        response = requests.post('http://127.0.0.1:5000/auth', headers=headers,
-                            data=json.dumps(body))
-
-        json_data = json.loads(response.text)
-        token = json_data['access_token']
-
-        headers = {'Authorization': 'jwt '+  token}
-
-        res = requests.get('http://127.0.0.1:5000/api/actual-status',
-                           headers=headers)
-
-        #res = self.client().get('http://127.0.0.1:5000/api/actual-status')
-        self.assertEqual(res.status_code, 200)
 
 
     def tearDown(self):
