@@ -49,8 +49,8 @@ Iniciamos la API mediante entrypoint.py.
 
 ## Peticiones
 
-Se han implementado las siguientes entradas a la API (en la imagen dashboard
-.png se identifican dentro del mockup). 
+Se han implementado las siguientes entradas a la API. En esta [imagen](https://raw.githubusercontent.com/robamemar94/Prueba_Devloper_Wellnes/master/dashboard.png) 
+se identifican graficamente dentro del mockup.
 
 * **actual-status:** Obtiene el estado actual (voltage, intensidad, potencia
  activa y
